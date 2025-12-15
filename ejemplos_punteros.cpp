@@ -147,7 +147,7 @@ void ejemplo4_MultiplesPunteros() {
     cout << "  valor4: " << valor4 << endl;
 }
 
-}
+
 
 // ============================================================================
 // EJEMPLO 5: PUNTEROS Y ARRAYS - RELACIÓN FUNDAMENTAL
@@ -163,9 +163,17 @@ void ejemplo5_PunterosYArrays() {
     cout << "\n=== EJEMPLO 5: PUNTEROS Y ARRAYS ===" << endl;
 
     // COMPLETA AQUÍ
-
-
+    int arr5[5] = {10, 20, 30, 40, 50};
+    int* ptr5=arr5;
+    cout<<"posicion arr "<<*ptr5<<endl;
+    cout << "Tres formas de acceder a elementos:" << endl;
+    cout << "  arr5[2] = " << arr5[2] << endl;           // Forma 1: Notación de array
+    cout << "  *(ptr5 + 2) = " << *(ptr5 + 2) << endl;   // Forma 2: Aritmética de punteros
+    cout << "  ptr5[2] = " << ptr5[4] << endl;           // Forma 3: Notación de array con puntero
 }
+
+
+
 
 // ============================================================================
 // EJEMPLO 6: RECORRER ARRAY CON PUNTERO
@@ -181,7 +189,19 @@ void ejemplo6_RecorrerArray() {
     cout << "\n=== EJEMPLO 6: RECORRER ARRAY CON PUNTERO ===" << endl;
 
     // COMPLETA AQUÍ
-
+    int arr6[5] = {10, 20, 30, 40, 50};
+    int* ptr6= arr6;
+    cout << "Método 1: Usando índice" << endl;
+    for (int i=0;i<5;i++) {
+        cout << *(ptr6 + i) << " ";
+    }
+    cout << endl;
+    cout << "Método 2: Incrementando el puntero" << endl;
+    ptr6 = arr6;  // Resetear
+    for (int i=0;i<5;i++) {
+        cout << *ptr6 << " ";
+        ptr6++;  // Avanzar al siguiente elemento
+    }
 
 }
 
