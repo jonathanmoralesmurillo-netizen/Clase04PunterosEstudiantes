@@ -343,6 +343,11 @@ void ejemplo11_ArrayEstaticoPunteros() {
     for (int i = 0; i < 3; i++) {
         ptrs11[i]=&personas11[i];
     }
+    cout << "Información usando punteros:" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << "  Persona " << (i+1) << ": " << ptrs11[i]->toString() << endl;
+
+    }
 
 
 }
@@ -361,8 +366,22 @@ void ejemplo12_IntercambiarPunteros() {
     cout << "\n=== EJEMPLO 12: INTERCAMBIAR PUNTEROS ===" << endl;
 
     // COMPLETA AQUÍ
+    Persona persona12a("Juan", 25, 100);
+    Persona persona12b("Maria", 30, 200);
+    Persona* ptr12a = &persona12a;
+    Persona* ptr12b = &persona12b;
+    cout << "Antes del intercambio:" << endl;
+    cout << "  ptr12a -> " << ptr12a->toString() << endl;
+    cout << "  ptr12b -> " << ptr12b->toString() << endl;
 
 
+    // Intercambiar punteros (no objetos)
+    Persona* temp12 = ptr12a;
+    ptr12a = ptr12b;
+    ptr12b = temp12;
+    cout << "\nDespués del intercambio:" << endl;
+    cout << "  ptr12a -> " << ptr12a->toString() << endl;
+    cout << "  ptr12b -> " << ptr12b->toString() << endl;
 }
 
 // ============================================================================
@@ -387,10 +406,24 @@ void ejemplo13_MemoriaDinamica() {
     cout << "\n=== EJEMPLO 13: MEMORIA DINÁMICA ===" << endl;
 
     // COMPLETA AQUÍ - Parte 1: Variable simple
-
+    int* ptr13a = new int;
+    *ptr13a = 42;
+    cout << "Valor dinámico: " << *ptr13a << endl;
+    delete ptr13a;        // Liberar memoria
+    ptr13a = nullptr;     // Buena práctica
 
     // COMPLETA AQUÍ - Parte 2: Array
+    int* arr13 = new int[5];
+    for (int i = 0; i < 5; i++) {
+        arr13[i]=i*10;
+    }
+    cout << "Array dinámico: ";
+    for (int i = 0; i < 5; i++) {
+        cout << arr13[i] << " ";
+    }
 
+    delete[] arr13;
+    arr13 = nullptr;
 
 }
 
@@ -409,8 +442,24 @@ void ejemplo14_ArrayDinamicoPunteros() {
     cout << "\n=== EJEMPLO 14: ARRAY DINÁMICO DE PUNTEROS A OBJETOS ===" << endl;
 
     // COMPLETA AQUÍ
+    int cantidad14 = 3;
+    Persona * p1=new Persona("Juan", 23);
+    Persona **  personas14 = new Persona *[cantidad14];
+    personas14[0] = new Persona("Carlos", 22, 301);
+    personas14[1] = new Persona("Diana", 28, 302);
+    personas14[2] = new Persona("Eduardo", 35, 303);
+    cout << "Personas creadas dinámicamente:" << endl;
+    for (int i = 0; i < cantidad14; i++) {
+        cout << "  " << personas14[i]->toString() << endl;
+    }
+    // Liberar memoria correctamente
+    // Primero liberar cada objeto
+    for (int i = 0; i < cantidad14; i++) {
 
-
+        delete personas14[i];
+    }
+    delete[] personas14;
+    cout << "Memoria liberada correctamente." << endl;
 }
 
 // ============================================================================
