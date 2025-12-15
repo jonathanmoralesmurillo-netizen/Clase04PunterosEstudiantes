@@ -131,6 +131,19 @@ void ejemplo4_MultiplesPunteros() {
     cout << "\n=== EJEMPLO 4: MÚLTIPLES PUNTEROS A LA MISMA VARIABLE ===" << endl;
 
     // COMPLETA AQUÍ
+    int valor4 = 42;
+    int* ptr4a = &valor4;
+    int* ptr4b = &valor4;
+    int* ptr4c = &valor4;
+    cout << "Valor inicial: " << valor4 << endl;
+    *ptr4a = 100;  // Modifica valor4
+    cout << "Después de *ptr4a = 100:" << endl;
+    cout << "  *ptr4a: " << *ptr4a << endl;
+    cout << "  *ptr4b: " << *ptr4b << endl;
+    cout << "  *ptr4c: " << *ptr4c << endl;
+    cout << "  valor4: " << valor4 << endl;
+
+
 
 }
 
@@ -150,6 +163,14 @@ void ejemplo5_PunterosYArrays() {
     cout << "\n=== EJEMPLO 5: PUNTEROS Y ARRAYS ===" << endl;
 
     // COMPLETA AQUÍ
+    int arr5[5] = {10, 20, 30, 40, 50};
+    int* ptr5 = arr5;  // Equivale a: int* ptr5 = &arr5[0]
+    cout << "Tres formas de acceder a elementos:" << endl;
+    cout << "  arr5[2] = " << arr5[2] << endl;           // Forma 1: Notación de array
+    cout << "  *(ptr5 + 2) = " << *(ptr5 + 2) << endl;   // Forma 2: Aritmética de punteros
+    cout << "  ptr5[2] = " << ptr5[2] << endl;           // Forma 3: Notación de array con puntero
+
+
    }
 
 
@@ -169,6 +190,20 @@ void ejemplo6_RecorrerArray() {
     cout << "\n=== EJEMPLO 6: RECORRER ARRAY CON PUNTERO ===" << endl;
 
     // COMPLETA AQUÍ
+    int arr6[5] = {10, 20, 30, 40, 50};
+    int* ptr6 = arr6;
+
+    for (int i = 0; i < 5; i++) {
+        cout << *(ptr6 + i) << " ";
+    }
+    cout << endl;
+    ptr6 = arr6;  // Resetear
+
+    for (int i = 0; i < 5; i++) {
+        cout << *ptr6 << " ";
+        ptr6++;  // Avanzar al siguiente elemento
+    }
+    cout << endl;
 
 }
 
