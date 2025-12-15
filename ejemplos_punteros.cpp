@@ -51,6 +51,13 @@ void ejemplo1_OperadoresFundamentales() {
     cout << "\n=== EJEMPLO 1: OPERADORES FUNDAMENTALES ===" << endl;
 
     // COMPLETA AQUÍ
+    int valor1 = 10;
+    int* ptr1 = &valor1;
+
+    cout << "valor1: " << valor1 << endl;        // Valor: 10
+    cout << "&valor1: " << &valor1 << endl;      // Dirección de valor1
+    cout << "ptr1: " << ptr1 << endl;            // Contenido de ptr1 (dirección)
+    cout << "*ptr1: " << *ptr1 << endl;          // Valor apuntado: 10
 
 }
 
@@ -69,11 +76,21 @@ void ejemplo2_DeclaracionInicializacion() {
     cout << "\n=== EJEMPLO 2: DECLARACIÓN E INICIALIZACIÓN ===" << endl;
 
     // COMPLETA AQUÍ
+    int valor2 = 10;
+    // Forma 1: Declarar y luego asignar
+    int* ptr2a;
+    ptr2a = &valor2;
+    cout << "*ptr2a: " << *ptr2a << endl;
 
+    // Forma 2: Declarar e inicializar en una línea
+    int* ptr2b = &valor2;
+    cout << "*ptr2b: " << *ptr2b << endl;
+    // Forma 3: Inicializar con nullptr (recomendado)
+    int* ptr2c = nullptr;
+    if (ptr2c == nullptr) {
+        cout << "ptr2c es nullptr (correcto)" << endl;
 
-
-
-
+    }
 
 }
 
@@ -91,7 +108,11 @@ void ejemplo3_ModificarValores() {
     cout << "\n=== EJEMPLO 3: MODIFICAR VALORES A TRAVÉS DE PUNTEROS ===" << endl;
 
     // COMPLETA AQUÍ
-
+    int valor3 = 5;
+    int* ptr3 = &valor3;
+    cout << "Antes: valor3 = " << valor3 << endl;
+    *ptr3 = 10;  // Modifica valor3 a través del puntero
+    cout << "Después: valor3 = " << valor3 << endl;
 
 
 }
