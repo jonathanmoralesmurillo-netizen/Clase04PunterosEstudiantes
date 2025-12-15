@@ -39,7 +39,7 @@ public:
     }
 };
 
-// ============================================================================
+// =====================       =======================================================
 // EJEMPLO 1: OPERADORES FUNDAMENTALES (& y *)
 // ============================================================================
 // TODO:
@@ -51,7 +51,12 @@ void ejemplo1_OperadoresFundamentales() {
     cout << "\n=== EJEMPLO 1: OPERADORES FUNDAMENTALES ===" << endl;
 
     // COMPLETA AQUÍ
-
+     int valor1 = 10;
+    int* ptr1 = &valor1;
+    cout << "valor1: " << valor1 << endl;        // Valor: 10
+    cout << "&valor1: " << &valor1 << endl;      // Dirección de valor1
+    cout << "ptr1: " << ptr1 << endl;            // Contenido de ptr1 (dirección)
+    cout << "*ptr1: " << *ptr1 << endl;          // Valor apuntado: 10
 
 }
 
