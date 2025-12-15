@@ -222,6 +222,15 @@ void ejemplo7_AritmeticaPunteros() {
     cout << "\n=== EJEMPLO 7: ARITMÉTICA DE PUNTEROS ===" << endl;
 
     // COMPLETA AQUÍ
+    int arr7[5] = {10, 20, 30, 40, 50};
+    int* ptr7 = arr7;
+    cout << "Puntero inicial apunta a: " << *ptr7 << endl;
+    ptr7++;  // Avanza al siguiente elemento
+    cout << "Después de ptr7++: " << *ptr7 << endl;
+    ptr7 = ptr7 + 3;  // Avanza 3 elementos
+    cout << "Después de ptr7 + 3: " << *ptr7 << endl;
+    int diff = ptr7 - arr7;  // Diferencia en elementos
+    cout << "Diferencia (ptr7 - arr7): " << diff << " elementos" << endl;
 
 }
 
@@ -238,14 +247,17 @@ void ejemplo7_AritmeticaPunteros() {
 
 void duplicar(int* num) {
     // COMPLETA AQUÍ: Duplica el valor apuntado por num
-
+    *num = *num * 2;  // Modifica la variable original
 }
 
 void ejemplo8_PunterosYFunciones() {
     cout << "\n=== EJEMPLO 8: PUNTEROS Y FUNCIONES ===" << endl;
 
     // COMPLETA AQUÍ
-
+    int valor8 = 5;
+    cout << "Antes de duplicar: " << valor8 << endl;
+    duplicar(&valor8);
+    cout << "Después de duplicar: " << valor8 << endl;
 
 }
 
@@ -258,15 +270,21 @@ void ejemplo8_PunterosYFunciones() {
 // 1. Declara un array 'arr9' de 5 enteros con valores {1, 2, 3, 4, 5}
 // 2. Llama a imprimirArray pasando arr9 y su tamaño
 
-void imprimirArray(int* arr, int tamaño) {
+void imprimirArray(int* arr, int tamano) {
     // COMPLETA AQUÍ: Recorre el array e imprime cada elemento
+    for (int i = 0; i < tamano; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 
 }
 
 void ejemplo9_PasarArraysAFunciones() {
     cout << "\n=== EJEMPLO 9: PASAR ARRAYS A FUNCIONES ===" << endl;
-
+    int arr9[5] = {1, 2, 3, 4, 5};
     // COMPLETA AQUÍ
+    cout << "Este es el Array: ";
+    imprimirArray(arr9, 5);  // arr se pasa como puntero
 
 
 }
@@ -286,6 +304,18 @@ void ejemplo10_PunterosYClases() {
     cout << "\n=== EJEMPLO 10: PUNTEROS Y CLASES ===" << endl;
 
     // COMPLETA AQUÍ
+    Persona persona10("Juan", 25, 100);
+    Persona* ptr10=&persona10;
+    cout << "Usando operador flecha:" << endl;
+    cout << "  Nombre: " << ptr10->getNombre() << endl;
+    cout << "  Edad: " << ptr10->getEdad() << endl;
+
+    cout << "\nModificando a través del puntero:" << endl;
+    ptr10->setEdad(30);
+    cout << "  Nueva edad: " << ptr10->getEdad() << endl;
+    cout << "\nEquivalente usando desreferenciación:" << endl;
+    cout << "  (*ptr10).getNombre(): " << (*ptr10).getNombre() << endl;
+
 
 
 }
@@ -304,6 +334,15 @@ void ejemplo11_ArrayEstaticoPunteros() {
     cout << "\n=== EJEMPLO 11: ARRAY ESTÁTICO DE PUNTEROS A OBJETOS ===" << endl;
 
     // COMPLETA AQUÍ
+    Persona personas11[3];
+    Persona* ptrs11[3];
+    // Crear objetos
+    personas11[0] = Persona("Ana", 20, 101);
+    personas11[1] = Persona("Luis", 25, 102);
+    personas11[2] = Persona("Sofia", 30, 103);
+    for (int i = 0; i < 3; i++) {
+        ptrs11[i]=&personas11[i];
+    }
 
 
 }
