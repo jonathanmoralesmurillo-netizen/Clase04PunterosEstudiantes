@@ -51,12 +51,6 @@ void ejemplo1_OperadoresFundamentales() {
     cout << "\n=== EJEMPLO 1: OPERADORES FUNDAMENTALES ===" << endl;
 
     // COMPLETA AQUÍ
-     int valor1 = 10;
-    int* ptr1 = &valor1;
-    cout << "valor1: " << valor1 << endl;        // Valor: 10
-    cout << "&valor1: " << &valor1 << endl;      // Dirección de valor1
-    cout << "ptr1: " << ptr1 << endl;            // Contenido de ptr1 (dirección)
-    cout << "*ptr1: " << *ptr1 << endl;          // Valor apuntado: 10
 
 }
 
@@ -77,21 +71,7 @@ void ejemplo2_DeclaracionInicializacion() {
     // COMPLETA AQUÍ
 
 
-    int valor2 = 10;
-    int* ptr2a;
-    ptr2a = &valor2;
-    cout << "*ptr2a: " << *ptr2a << endl;
 
-    // Forma 2: Declarar e inicializar en una línea
-    int* ptr2b = &valor2;
-    cout << "*ptr2b: " << *ptr2b << endl;
-
-    // Forma 3: Inicializar con nullptr (recomendado)
-    int* ptr2c = nullptr;
-
-    if (ptr2c == nullptr) {
-        cout << "ptr2c es nullptr (correcto)" << endl;
-    }
 
 
 
@@ -111,11 +91,6 @@ void ejemplo3_ModificarValores() {
     cout << "\n=== EJEMPLO 3: MODIFICAR VALORES A TRAVÉS DE PUNTEROS ===" << endl;
 
     // COMPLETA AQUÍ
-    int valor3 = 5;
-    int* ptr3 = &valor3;
-    cout << "Antes: valor3 = " << valor3 << endl;
-    *ptr3 =10;
-    cout << "Después: valor3 = " << valor3 << endl;
 
 
 
@@ -135,16 +110,7 @@ void ejemplo4_MultiplesPunteros() {
     cout << "\n=== EJEMPLO 4: MÚLTIPLES PUNTEROS A LA MISMA VARIABLE ===" << endl;
 
     // COMPLETA AQUÍ
-    int valor4 = 42;
-    int* ptr4a = &valor4;
-    int* ptr4b = &valor4;
-    int* ptr4c = &valor4;
-    cout << "Valor inicial: " << valor4 << endl;
-    *ptr4a = 100;  // Modifica valor4
-    cout << "  *ptr4a: " << *ptr4a << endl;
-    cout << "  *ptr4b: " << *ptr4b << endl;
-    cout << "  *ptr4c: " << *ptr4c << endl;
-    cout << "  valor4: " << valor4 << endl;
+
 }
 
 
@@ -163,14 +129,7 @@ void ejemplo5_PunterosYArrays() {
     cout << "\n=== EJEMPLO 5: PUNTEROS Y ARRAYS ===" << endl;
 
     // COMPLETA AQUÍ
-    int arr5[5] = {10, 20, 30, 40, 50};
-    int* ptr5=arr5;
-    cout<<"posicion arr "<<*ptr5<<endl;
-    cout << "Tres formas de acceder a elementos:" << endl;
-    cout << "  arr5[2] = " << arr5[2] << endl;           // Forma 1: Notación de array
-    cout << "  *(ptr5 + 2) = " << *(ptr5 + 2) << endl;   // Forma 2: Aritmética de punteros
-    cout << "  ptr5[2] = " << ptr5[4] << endl;           // Forma 3: Notación de array con puntero
-}
+   }
 
 
 
@@ -189,20 +148,7 @@ void ejemplo6_RecorrerArray() {
     cout << "\n=== EJEMPLO 6: RECORRER ARRAY CON PUNTERO ===" << endl;
 
     // COMPLETA AQUÍ
-    int arr6[5] = {10, 20, 30, 40, 50};
-    int* ptr6= arr6;
-    cout << "Método 1: Usando índice" << endl;
-    for (int i=0;i<5;i++) {
-        cout << *(ptr6 + i) << " ";
-    }
-    cout << endl;
-    cout << "Método 2: Incrementando el puntero" << endl;
-    ptr6 = arr6;  // Resetear
-    for (int i=0;i<5;i++) {
-        cout << *ptr6 << " ";
-        ptr6++;  // Avanzar al siguiente elemento
-    }
-    cout << "hola Lu " << endl;
+
 }
 
 // ============================================================================
@@ -220,7 +166,6 @@ void ejemplo7_AritmeticaPunteros() {
     cout << "\n=== EJEMPLO 7: ARITMÉTICA DE PUNTEROS ===" << endl;
 
     // COMPLETA AQUÍ
-
 
 }
 
