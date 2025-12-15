@@ -77,6 +77,24 @@ void ejemplo2_DeclaracionInicializacion() {
     // COMPLETA AQUÍ
 
 
+    int valor2 = 10;
+    int* ptr2a;
+    ptr2a = &valor2;
+    cout << "*ptr2a: " << *ptr2a << endl;
+
+    // Forma 2: Declarar e inicializar en una línea
+    int* ptr2b = &valor2;
+    cout << "*ptr2b: " << *ptr2b << endl;
+
+    // Forma 3: Inicializar con nullptr (recomendado)
+    int* ptr2c = nullptr;
+
+    if (ptr2c == nullptr) {
+        cout << "ptr2c es nullptr (correcto)" << endl;
+    }
+
+
+
 }
 
 // ============================================================================
@@ -93,6 +111,12 @@ void ejemplo3_ModificarValores() {
     cout << "\n=== EJEMPLO 3: MODIFICAR VALORES A TRAVÉS DE PUNTEROS ===" << endl;
 
     // COMPLETA AQUÍ
+    int valor3 = 5;
+    int* ptr3 = &valor3;
+    cout << "Antes: valor3 = " << valor3 << endl;
+    *ptr3 =10;
+    cout << "Después: valor3 = " << valor3 << endl;
+
 
 
 }
@@ -111,7 +135,17 @@ void ejemplo4_MultiplesPunteros() {
     cout << "\n=== EJEMPLO 4: MÚLTIPLES PUNTEROS A LA MISMA VARIABLE ===" << endl;
 
     // COMPLETA AQUÍ
-
+    int valor4 = 42;
+    int* ptr4a = &valor4;
+    int* ptr4b = &valor4;
+    int* ptr4c = &valor4;
+    cout << "Valor inicial: " << valor4 << endl;
+    *ptr4a = 100;  // Modifica valor4
+    cout << "  *ptr4a: " << *ptr4a << endl;
+    cout << "  *ptr4b: " << *ptr4b << endl;
+    cout << "  *ptr4c: " << *ptr4c << endl;
+    cout << "  valor4: " << valor4 << endl;
+}
 
 }
 
