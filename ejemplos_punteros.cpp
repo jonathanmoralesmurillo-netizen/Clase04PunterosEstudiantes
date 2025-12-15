@@ -202,7 +202,7 @@ void ejemplo6_RecorrerArray() {
         cout << *ptr6 << " ";
         ptr6++;  // Avanzar al siguiente elemento
     }
-
+    cout << "hola Lu " << endl;
 }
 
 // ============================================================================
