@@ -486,24 +486,7 @@ void ejemplo15_PunterosConstantes() {
     cout << "\n=== EJEMPLO 15: PUNTEROS CONSTANTES ===" << endl;
 
     // COMPLETA AQUÍ
-    int valor15a = 10;
-    int valor15b = 20;
-    // 1. Puntero a constante (no puede modificar el valor)
-    const int* ptr15a = &valor15a;
-    cout << "*ptr15a = " << *ptr15a << endl;
-    // *ptr15a = 20;  // ERROR: No se puede modificar
-    ptr15a = &valor15b;  // OK: Puede cambiar la dirección
-    cout << "ptr15a ahora apunta a valor15b: " << *ptr15a << endl;
 
-    // 2. Puntero constante (no puede cambiar la dirección)
-    int* const ptr15b = &valor15a;
-    *ptr15b = 30;     // OK: Puede modificar el valor
-    cout << "valor15a después de *ptr15b = 30: " << valor15a << endl;
-   // ptr15b = &valor15b;   // ERROR: No puede cambiar la dirección
-    // 3. Puntero constante a constante
-    const int* const ptr15c = &valor15a;
-    // *ptr15c = 40;  // ERROR
-    // ptr15c = &valor15b;  // ERROR
 }
 
 // ============================================================================
@@ -522,7 +505,6 @@ void ejemplo16_PunterosAPunteros() {
 
     // COMPLETA AQUÍ
 
-
 }
 
 // ============================================================================
@@ -539,6 +521,7 @@ void ejemplo17_PunterosYStrings() {
     cout << "\n=== EJEMPLO 17: PUNTEROS Y STRINGS ===" << endl;
 
     // COMPLETA AQUÍ
+
 
 
 }
