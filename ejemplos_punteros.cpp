@@ -360,6 +360,28 @@ void ejemplo12_IntercambiarPunteros() {
     cout << "\n=== EJEMPLO 12: INTERCAMBIAR PUNTEROS ===" << endl;
 
     // COMPLETA AQUÍ
+    Persona persona12a("Juan", 25, 100);
+    Persona persona12b("Maria", 30, 200);
+    Persona* ptr12a = &persona12a;
+    Persona* ptr12b = &persona12b;
+
+
+    cout << "Antes del intercambio:" << endl;
+    cout << "  ptr12a -> " << ptr12a->toString() << endl;
+    cout << "  ptr12b -> " << ptr12b->toString() << endl;
+
+    // Intercambiar punteros (no objetos)
+    Persona* temp12 = ptr12a;
+    ptr12a = ptr12b;
+    ptr12b = temp12;
+
+    cout << "\nDespués del intercambio:" << endl;
+    cout << "  ptr12a -> " << ptr12a->toString() << endl;
+    cout << "  ptr12b -> " << ptr12b->toString() << endl;
+
+
+
+
 
 }
 
@@ -385,6 +407,27 @@ void ejemplo13_MemoriaDinamica() {
     cout << "\n=== EJEMPLO 13: MEMORIA DINÁMICA ===" << endl;
 
     // COMPLETA AQUÍ - Parte 1: Variable simple
+    int* ptr13a = new int;
+    *ptr13a = 42;
+    cout << "Valor dinámico: " << *ptr13a << endl;
+    delete ptr13a;        // Liberar memoria
+    ptr13a = nullptr;     // Buena práctica
+
+    // Reservar memoria para un array
+    int* arr13 = new int[5];
+
+    for (int i = 0; i < 5; i++) {
+        arr13[i]=i*10;
+    }
+
+
+    cout << "Array dinámico: ";
+    for (int i = 0; i < 5; i++) {
+        cout << arr13[i] << " ";
+    }
+
+    delete[] arr13;
+    arr13 = nullptr;
 
 
 }
@@ -404,7 +447,24 @@ void ejemplo14_ArrayDinamicoPunteros() {
     cout << "\n=== EJEMPLO 14: ARRAY DINÁMICO DE PUNTEROS A OBJETOS ===" << endl;
 
     // COMPLETA AQUÍ
-
+    int cantidad14 = 3;
+    Persona** personas14 = new Persona*[cantidad14];
+    // Crear objetos dinámicamente
+    personas14[0] = new Persona("Carlos", 22, 301);
+    personas14[1] = new Persona("Diana", 28, 302);
+    personas14[2] = new Persona("Eduardo", 35, 303);
+    // Usar objetos
+    cout << "Personas creadas dinámicamente:" << endl;
+    for (int i = 0; i < cantidad14; i++) {
+        cout << "  " << personas14[i]->toString() << endl;
+    }
+    // Liberar memoria correctamente
+    // Primero liberar cada objeto
+    for (int i = 0; i < cantidad14; i++) {
+        delete personas14[i];
+    }
+    delete[] personas14;
+    cout << "Memoria liberada correctamente." << endl;
 }
 
 // ============================================================================
@@ -426,8 +486,24 @@ void ejemplo15_PunterosConstantes() {
     cout << "\n=== EJEMPLO 15: PUNTEROS CONSTANTES ===" << endl;
 
     // COMPLETA AQUÍ
+    int valor15a = 10;
+    int valor15b = 20;
+    // 1. Puntero a constante (no puede modificar el valor)
+    const int* ptr15a = &valor15a;
+    cout << "*ptr15a = " << *ptr15a << endl;
+    // *ptr15a = 20;  // ERROR: No se puede modificar
+    ptr15a = &valor15b;  // OK: Puede cambiar la dirección
+    cout << "ptr15a ahora apunta a valor15b: " << *ptr15a << endl;
 
-
+    // 2. Puntero constante (no puede cambiar la dirección)
+    int* const ptr15b = &valor15a;
+    *ptr15b = 30;     // OK: Puede modificar el valor
+    cout << "valor15a después de *ptr15b = 30: " << valor15a << endl;
+   // ptr15b = &valor15b;   // ERROR: No puede cambiar la dirección
+    // 3. Puntero constante a constante
+    const int* const ptr15c = &valor15a;
+    // *ptr15c = 40;  // ERROR
+    // ptr15c = &valor15b;  // ERROR
 }
 
 // ============================================================================
