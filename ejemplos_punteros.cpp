@@ -254,8 +254,10 @@ void ejemplo8_PunterosYFunciones() {
     cout << "\n=== EJEMPLO 8: PUNTEROS Y FUNCIONES ===" << endl;
 
     // COMPLETA AQUÍ
-
-
+    int valor8 = 5;
+    cout << "Antes de duplicar: " << valor8 << endl;
+    duplicar(&valor8);  // Pasar dirección
+    cout << "Después de duplicar: " << valor8 << endl;
 }
 
 // ============================================================================
@@ -269,12 +271,17 @@ void ejemplo8_PunterosYFunciones() {
 
 void imprimirArray(int* arr, int tamano) {
     // COMPLETA AQUÍ: Recorre el array e imprime cada elemento
+     for (int i=0; i<tamano;i++) {
+         cout << arr[i] << " ";
+     }
 
 }
 
 void ejemplo9_PasarArraysAFunciones() {
     cout << "\n=== EJEMPLO 9: PASAR ARRAYS A FUNCIONES ===" << endl;
-
+    int arr9[5] = {1, 2, 3, 4, 5};
+    cout<<"Array: ";
+    imprimirArray(arr9,5);
 
 
 }
@@ -294,10 +301,18 @@ void ejemplo10_PunterosYClases() {
     cout << "\n=== EJEMPLO 10: PUNTEROS Y CLASES ===" << endl;
 
     // COMPLETA AQUÍ
+    Persona persona10("Juan", 25, 100);
+    Persona* ptr10=&persona10;
+    cout << "Usando operador flecha:" << endl;
+    cout << "  Nombre: " << ptr10->getNombre() << endl;
+    cout << "  Edad: " << ptr10->getEdad() << endl;
 
-
+    cout << "\nModificando a través del puntero:" << endl;
+    ptr10->setEdad(30);
+    cout << "  Nueva edad: " << ptr10->getEdad() << endl;
+    cout << "\nEquivalente usando desreferenciación:" << endl;
+    cout << "  (*ptr10).getNombre(): " << (*ptr10).getNombre() << endl;
 }
-
 // ============================================================================
 // EJEMPLO 11: ARRAY ESTÁTICO DE PUNTEROS A OBJETOS
 // ============================================================================
@@ -312,8 +327,22 @@ void ejemplo11_ArrayEstaticoPunteros() {
     cout << "\n=== EJEMPLO 11: ARRAY ESTÁTICO DE PUNTEROS A OBJETOS ===" << endl;
 
     // COMPLETA AQUÍ
+    Persona personas11[3];
+    // Crear objetos
+    personas11[0] = Persona("Ana", 20, 101);
+    personas11[1] = Persona("Luis", 25, 102);
+    personas11[2] = Persona("Sofia", 30, 103);
+    Persona* ptrs11[3];
+    for (int i = 0; i < 3; i++) {
+        ptrs11[i]=&personas11[1];
+    }
 
 
+    // Usar punteros
+    cout << "Información usando punteros:" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << "  Persona " << (i+1) << ": " << ptrs11[i]->toString() << endl;
+    }
 
 }
 
